@@ -1,0 +1,147 @@
+*{
+    scroll-behavior: smooth;
+    
+}
+::-webkit-scrollbar{
+    width: 1em;
+}
+ ::-webkit-scrollbar-track {
+    background:rgba(30, 200, 30, 0.3);
+}
+::-webkit-scrollbar-thumb{
+    background: rgba(24, 24, 129, 0.3);
+    border-radius: 1em;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: rgba(24, 24, 129, 0.4);
+}
+body{
+    
+margin: 0;
+    
+cursor:default;
+    
+background-image: linear-gradient(45deg ,rgba(0, 250, 0, 0.3)
+    ,rgba(0, 0, 250, 0.3));
+    
+
+}
+nav{
+    
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid; */
+    height: 3em;
+    width: 100%;
+    align-items: center;
+    position: sticky;
+    top:0;
+    z-index: 100;
+    background-color: rgb(125, 146, 209);
+}
+.nav-sec{
+    padding: 0.6em 1em;
+    font-size: 1.3rem;
+    
+    transition: background-color 200ms linear;
+   
+    
+}
+.nav-sec:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.sections{
+    border: 1px solid transparent;
+    height: 350vh;
+    
+   
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    font-size: 1.2em;
+    height: 70vh;
+    line-height: 1.5em;
+    /* border: 1px solid; */
+    padding: 1em;
+    
+    opacity: 0;
+    
+
+    
+}
+.active-class{
+    position: relative;
+    border-radius: 2em 0em;
+    animation: fade-in 600ms ease-in forwards 200ms;
+    
+}
+@keyframes fade-in {
+    100%{
+        opacity:1 ;
+        background-image: linear-gradient(45deg ,rgba(0, 0, 250, 0.3),rgba(0, 250, 0, 0.3));;
+       
+    }
+}
+
+.active-class::before{
+    content: "";
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    background-color: rgb(245, 156, 13);
+    position: absolute;
+    top:2em;
+    left: 2em;
+    z-index: -1;
+    animation: circle-move 2000ms linear infinite;
+}
+.active-class::after{
+    content: "  ";
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: rgb(245, 156, 13);
+    position: absolute;
+    z-index: -1;
+    animation: circle-move 1700ms linear infinite ;
+     right: 2em;
+     bottom: 2em;
+}
+@keyframes circle-move {
+    0%{
+       transform:rotate(0deg) translateY(2em) rotate(0deg) ;
+    }
+    
+    100%{
+        transform:rotate(360deg) translateY(2em) rotate(-360deg);
+    }
+    
+}
+.sections :nth-child(2n){
+    float: right;
+   }
+   .sections :first-child{
+    margin-top: 2em;
+   }
+   .bot-button{
+    position: sticky;
+    /* width: 2.5em;
+    height: 2.5em; */
+    padding: 1em;
+    bottom: 2em;
+    right: 2em;
+    float: right;
+    margin-top: 100vh;
+    border-style: none;
+    background-color:rgb(109, 180, 209) ;
+    transition: background-color 200ms linear;
+    border-radius: 2em;
+    
+   }
+   .bot-button:hover{
+    background-color:rgba(109, 180, 209,0.5)
+   }
+   
